@@ -2,7 +2,7 @@
     "version": 2,
     "name": "Crud Operations App",
     "builds": [
-       { "src": "server.js", "use": "@vercel/node" }
+       { "src": "server.js", "use": "@now/node-server" }
     ],
     "routes": [
        { "src": "/(.*)", "dest": "/server.js" }

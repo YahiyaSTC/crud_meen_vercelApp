@@ -15,10 +15,10 @@ app.set("view engine", "ejs");
 app.use("", require("./Controller/mainController.js"));
 
 
-if(serverEnv === "development"){
+// if(serverEnv !== "development"){
   app.listen(port, () => {
     console.log(`server is listing on host http://localhost:${port}`);
   });
-}else{
-  app.listen();
-}
+// }else{
+//   app.listen();
+// }

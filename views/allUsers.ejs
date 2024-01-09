@@ -1,0 +1,38 @@
+<%- include('./header'); %>
+
+<main style="height: 80vh; display: flex; align-items: center">
+  <div class="container">
+    <% if(Users.length === 0) { %>
+    <div class="alert alert-primary mt-5" role="alert">No Data Available</div>
+    <% }else{ %>
+    <table class="table table-hover border">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Phone Number</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% Users.forEach((data,i)=>{ %>
+          <tr>
+            <th scope="row"><%- i %></th>
+            <td><%- data.name %></td>
+            <td><%- data.email %></td>
+            <td><%- data.phoneNumber %></td>
+            <td class="d-flex gap-3">
+              <a href="/edit/<%- data._id %>"><i class="bi bi-pencil"></i></a>
+              <a href="/delete/<%- data._id %>"><i class="bi bi-trash"></i></a>
+            </td>
+          </tr>
+  
+          <% }) %>
+      </tbody>
+    </table>
+    <% } %>
+  </div>
+</main>
+
+<%- include('./footer'); %>

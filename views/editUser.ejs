@@ -1,0 +1,51 @@
+<%- include('./header'); %>
+
+<main style="height: 80vh; display: flex; align-items: center">
+  <div class="container border py-2 w-50">
+    <div class="alert fs-1 text-center bg-success text-light">Edit User</div>
+    <form class="row g-3" action="/update/<%- User._id %>" method="post">
+      <div class="col-12">
+        <label for="name" class="form-label">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          name="name"
+          value="<%- User.name %>"
+          placeholder="Your Name"
+        />
+      </div>
+      <div class="col-12">
+        <label for="email" class="form-label">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          value="<%- User.email %>"
+          placeholder="Your Email"
+        />
+      </div>
+      <div class="col-12">
+        <label for="number" class="form-label">Phone Number</label>
+        <input
+          type="number"
+          class="form-control"
+          id="number"
+          name="number"
+          value="<%- User.phoneNumber %>"
+          placeholder="Your Phone Number"
+        />
+      </div>
+      <div class="col-12">
+        <button type="submit" class="btn btn-success w-100">Update</button>
+      </div>
+    </form>
+    <% if(message) { %>
+      <div class="alert alert-success mt-5" role="alert"> <%- message %> </div>
+    <% } %>
+    <!-- <div> <%- message %> </div> -->
+  </div>
+</main>
+
+<%- include('./footer'); %>

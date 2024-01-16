@@ -1,5 +1,6 @@
 require("dotenv").config();
 const express = require("express");
+const cors = require("cors");
 const connectDB = require("./Config/db");
 connectDB();
 
@@ -9,6 +10,7 @@ const serverEnv = process.env.NODE_ENV
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(cors());
 
 app.set("view engine", "ejs");
 

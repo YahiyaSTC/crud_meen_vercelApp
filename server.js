@@ -18,9 +18,9 @@ app.use("", require("./Controller/mainController.js"));
 
 
 // if(serverEnv !== "development"){
-  // app.listen(port, () => {
-  //   console.log(`server is listing on host http://localhost:${port}`);
-  // });
+  app.listen(port, () => {
+     console.log(`server is listing on host http://localhost:${port}`);
+   });
 // }else{
-  app.listen();
+//  app.listen();
 // }
